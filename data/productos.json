@@ -1,0 +1,8 @@
+[
+    { "id": 1, "nombre": "Teclado Mecánico", "precio": 8500, "img": "./assets/img/teclado.jpg", "categoria": "perifericos" },
+    { "id": 2, "nombre": "Mouse Gamer", "precio": 3200, "img": "./assets/img/mouse.jpg", "categoria": "perifericos" },
+    { "id": 3, "nombre": "Monitor 24 pulgadas", "precio": 45000, "img": "./assets/img/monitor.jpg", "categoria": "monitores" },
+    { "id": 4, "nombre": "Silla Gamer", "precio": 65000, "img": "./assets/img/silla.jpg", "categoria": "muebles" },
+    { "id": 5, "nombre": "Auriculares", "precio": 6000, "img": "./assets/img/auriculares.jpg", "categoria": "audio" },
+    { "id": 6, "nombre": "Webcam HD", "precio": 4500, "img": "./assets/img/webcam.jpg", "categoria": "perifericos" }
+]

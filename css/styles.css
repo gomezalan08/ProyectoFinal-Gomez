@@ -1,30 +1,147 @@
-/* Ajustes sobre Bootstrap */
+/* --- CONFIGURACIÓN GENERAL --- */
+:root {
+    --primary-color: #4e54c8;
+    --secondary-color: #8f94fb;
+    --accent-color: #00b09b;
+    --bg-color: #f4f6f9;
+    --card-bg: #ffffff;
+    --text-dark: #333;
+}
 
 body {
-    background-color: #f8f9fa; /* Gris muy suave típico de Bootstrap */
+    background-color: var(--bg-color);
+    font-family: 'Poppins', sans-serif;
+    padding-top: 70px;
 }
 
-.card-img-top {
-    height: 200px;
-    object-fit: cover; /* Esto evita que las imágenes se deformen */
-    background-color: #eee;
+/* --- NAVBAR --- */
+.navbar {
+    background: rgba(33, 37, 41, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-/* Transición suave al pasar el mouse por las tarjetas */
+.navbar-brand span { color: var(--secondary-color) !important; }
+
+#input-buscador {
+    border: 2px solid transparent;
+    transition: all 0.3s;
+    background-color: rgba(255,255,255,0.1);
+    color: white;
+}
+
+#input-buscador:focus {
+    background-color: white;
+    color: #333;
+    border-color: var(--primary-color);
+    box-shadow: none;
+}
+
+#input-buscador::placeholder { color: rgba(255,255,255,0.6); }
+
+/* --- HERO SECTION --- */
+.hero-section {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    height: 250px;
+    margin-bottom: 40px;
+    box-shadow: 0 10px 20px rgba(78, 84, 200, 0.2);
+}
+
+/* --- TARJETAS DE PRODUCTOS --- */
 .card {
-    transition: transform 0.2s ease-in-out;
+    border: none;
+    border-radius: 20px;
+    overflow: hidden;
+    background: var(--card-bg);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
-    transform: translateY(-5px);
-    border-color: #0d6efd; /* Azul Bootstrap */
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
 }
 
-/* Ajuste del scroll del carrito */
-#items-carrito::-webkit-scrollbar {
-    width: 8px;
+.card-img-top {
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.5s;
 }
-#items-carrito::-webkit-scrollbar-thumb {
-    background-color: #ccc;
-    border-radius: 4px;
+
+.card:hover .card-img-top { transform: scale(1.05); }
+
+.card-body { padding: 1.5rem; }
+.card-title { font-weight: 600; font-size: 1.1rem; }
+
+.btn-primary {
+    background: var(--primary-color);
+    border: none;
+    border-radius: 10px;
+    padding: 8px 20px;
+    font-weight: 500;
+    width: 100%;
+    transition: background 0.3s;
+}
+
+.btn-primary:hover { background: var(--secondary-color); }
+
+/* --- CARRITO --- */
+.carrito-panel {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.custom-scroll {
+    max-height: 300px;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+.custom-scroll::-webkit-scrollbar { width: 6px; }
+.custom-scroll::-webkit-scrollbar-thumb { background-color: #ddd; border-radius: 10px; }
+
+/* Items del carrito  */
+.list-group-item {
+    border: none;
+    border-bottom: 1px dashed #eee;
+    padding: 15px 0;
+    background: transparent;
+
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+}
+
+.btn-comprar {
+    background: linear-gradient(45deg, #11998e, #38ef7d);
+    border: none;
+    color: white;
+    font-weight: 600;
+    border-radius: 10px;
+}
+
+.btn-comprar:hover {
+    box-shadow: 0 5px 15px rgba(56, 239, 125, 0.4);
+    color: white;
+    transform: translateY(-2px);
+}
+
+#loader-texto {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    animation: palpitar 1.5s infinite;
+}
+
+@keyframes palpitar {
+    0% { opacity: 0.5; }
+    50% { opacity: 1; }
+    100% { opacity: 0.5; }
+}
+
+@media (max-width: 991px) {
+    .carrito-panel {
+        margin-top: 30px;
+        position: static !important;
+    }
 }
